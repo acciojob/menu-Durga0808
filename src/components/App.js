@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/App.css'
 
 export default function App() {
     const [menu, setMenu] = React.useState([
@@ -117,7 +116,7 @@ export default function App() {
 
             <ul className="list">
                 {menu.filter(item => (item.category === active || active === 'all')).map((item) => (
-                    <li key={item.id}>
+                    <li key={item.id} data-test-id={`menu-item-${item.category}`}>
                         <img src={item.img} alt={item.title} />
                         <div>
                             <div className="top">

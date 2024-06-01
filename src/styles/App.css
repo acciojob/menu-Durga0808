@@ -1,16 +1,3 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
-
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -18,39 +5,46 @@ body {
     padding: 0;
   }
   
-  .App {
+  #main {
     text-align: center;
+    padding: 20px;
   }
   
-  header {
-    margin: 20px 0;
-  }
-  
-  .btn-container {
+  .categories {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
   }
   
-  .filter-btn {
-    background-color: #f3f3f3;
-    border: 1px solid #ddd;
+  .categories li {
+    margin: 0 10px;
+  }
+  
+  .categories a {
+    text-decoration: none;
     padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+    background-color: #f3f3f3;
   }
   
-  .filter-btn.active {
-    background-color: #ddd;
+  .categories a.active {
+    background-color: #333;
+    color: white;
   }
   
-  .dishes {
+  .list {
+    list-style: none;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   
-  .dish-item {
+  .list li {
     background: white;
     border-radius: 5px;
     margin: 10px;
@@ -59,27 +53,27 @@ body {
     max-width: 300px;
   }
   
-  .photo {
+  .list img {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 15px;
   }
   
-  .item-info {
-    text-align: left;
-  }
-  
-  .item-info header {
+  .top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
   }
   
-  .price {
+  .top h2 {
+    margin: 0;
+  }
+  
+  .top span {
     color: #c59d5f;
   }
   
-  .item-text {
-    margin-bottom: 0;
+  p {
+    margin: 0;
   }
   

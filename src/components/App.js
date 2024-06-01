@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../styles/App.css'
 
 export default function App() {
     const [menu, setMenu] = React.useState([
@@ -74,64 +75,60 @@ export default function App() {
           img: './images/item-9.jpeg',
           desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
         },
-    ])
+    ]);
 
-    const [active, setActive] = React.useState('all')
+    const [active, setActive] = React.useState('all');
 
     const isActive = (type) => {
-        return type == active ? 'active' : ''
-    }
-    
+        return type === active ? 'active' : '';
+    };
+
     const onClick = (e, type) => {
         e.preventDefault();
-        setActive(type)
-    }
-
+        setActive(type);
+    };
 
     return (
-        <>
+        <div id="main">
             <h1>Our Menu</h1>
 
-            <ul>
+            <ul className="categories">
                 <li>
-                    <a href="/" className={isActive('all')} onClick={(e) => onClick(e, 'all')}>
+                    <a href="/" id="filter-btn-0" className={isActive('all')} onClick={(e) => onClick(e, 'all')}>
                         All
                     </a>
                 </li>
                 <li>
-                    <a href="/" className={isActive('breakfast')} onClick={(e) => onClick(e, 'breakfast')}>
+                    <a href="/" id="filter-btn-1" className={isActive('breakfast')} onClick={(e) => onClick(e, 'breakfast')}>
                         Breakfast
                     </a>
                 </li>
                 <li>
-                    <a href="/" className={isActive('lunch')} onClick={(e) => onClick(e, 'lunch')}>
+                    <a href="/" id="filter-btn-2" className={isActive('lunch')} onClick={(e) => onClick(e, 'lunch')}>
                         Lunch
                     </a>
                 </li>
                 <li>
-                    <a href="/" className={isActive('shakes')} onClick={(e) => onClick(e, 'shakes')}>
+                    <a href="/" id="filter-btn-3" className={isActive('shakes')} onClick={(e) => onClick(e, 'shakes')}>
                         Shakes
                     </a>
                 </li>
             </ul>
 
             <ul className="list">
-                {
-                    menu.filter(item => (item.category == active || active == 'all')).map((item) => (
-                        <li key={item.id}>
-                            <img src={item.img} alt="Image" />
-                            <div>
-                                <div className="top">
-                                    <h2>{item.title}</h2>
-                                    <span>$ {item.price}</span>
-                                </div>
-
-                                <p>{item.desc}</p>
+                {menu.filter(item => (item.category === active || active === 'all')).map((item) => (
+                    <li key={item.id}>
+                        <img src={item.img} alt={item.title} />
+                        <div>
+                            <div className="top">
+                                <h2>{item.title}</h2>
+                                <span>$ {item.price}</span>
                             </div>
-                        </li>
-                    ))
-                }
+                            <p>{item.desc}</p>
+                        </div>
+                    </li>
+                ))}
             </ul>
-        </>
-    )  
+        </div>
+    );
 }
